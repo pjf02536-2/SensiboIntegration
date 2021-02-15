@@ -1,7 +1,7 @@
 /**
  *  Sensibo Integration for Hubitat
  *
- *  Copyright 2019 Bryan Li
+ *  Copyright 2021 Paul Hutton
  *
  *  Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
  *  in compliance with the License. You may obtain a copy of the License at:
@@ -13,8 +13,7 @@
  *  for the specific language governing permissions and limitations under the License.
  *
  *  Date          Comments
- *  2019-04-27    Based on work by Eric Gosselin - Modified for Hubitat
- *  2019-07-23    Merge robert1's logging changes
+ *  2019-04-27    Forked from Bryan Li's port from ST
  */
 
 definition(
