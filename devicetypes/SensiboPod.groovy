@@ -61,25 +61,25 @@ metadata {
             // command "voltage"
             command "raiseTemperature"
             command "lowerTemperature"
-//            command "switchSwing"
-//            command "modeSwing", [
-//                [
-//                    name:"Swing Mode", type: "ENUM", description: "Pick an option", constraints: [
-//                        "fixedTop",
-//                        "fixedMiddleTop",
-//                        "fixedMiddle",
-//                        "fixedMiddleBottom",
-//                        "fixedBottom",
-//                        "rangeTop",
-//                        "rangeMiddle",
-//                        "rangeBottom",
-//                        "rangeFull",
-//                        "horizontal",
-//                        "both",
-//                        "stopped"
-//                    ] 
-//                ]
-//            ]
+            command "switchSwing"
+            command "modeSwing", [
+                [
+                    name:"Swing Mode", type: "ENUM", description: "Pick an option", constraints: [
+                        "fixedTop",
+                        "fixedMiddleTop",
+                        "fixedMiddle",
+                        "fixedMiddleBottom",
+                        "fixedBottom",
+                        "rangeTop",
+                        "rangeMiddle",
+                        "rangeBottom",
+                        "rangeFull",
+                        "horizontal",
+                        "both",
+                        "stopped"
+                    ] 
+                ]
+            ]
 //            command "setThermostatMode"
             command "modeHeat"
             command "modeCool"
@@ -189,20 +189,20 @@ def switchMode() {
 
 	switch (currentMode) {
 		case "heat":
-			returnCommand = modeMode("cool")
-			break
+                    returnCommand = modeMode("cool")
+                    break
 		case "cool":
-			returnCommand = modeMode("fan")
-			break		
+                    returnCommand = modeMode("fan")
+                    break		
 		case "fan":
-			returnCommand = modeMode("dry")
-			break
-        case "dry":
-            returnCommand = modeMode("auto")
-			break
-        case "auto":
-			returnCommand = modeMode("heat")
-			break
+                    returnCommand = modeMode("dry")
+                    break
+                case "dry":
+                    returnCommand = modeMode("auto")
+                    break
+                case "auto":
+                    returnCommand = modeMode("heat")
+                    break
 	}
 
 	returnCommand
@@ -1463,16 +1463,16 @@ def modeSwing(String newSwing) {
     if (capabilities.remoteCapabilities != null) {
     	def Swings = capabilities.remoteCapabilities.swing
 
-        displayDebugLog("Swing capabilities : " + capabilities.remoteCapabilities.swing)
+        displayDebugLog("Swing capabilities : " + Swings)
 
-        Swing = GetNextSwingMode(newSwing,capabilities.remoteCapabilities.swing)
+        Swing = GetNextSwingMode(newSwing,Swings)
         //displayDebugLog("Swing : " + Swing)
         
         def result = parent.setACStates(this, device.deviceNetworkId, "on", device.currentState("currentmode").value, Setpoint, device.currentState("fanLevel").value, Swing, device.currentState("temperatureUnit").value)
         if (result) {
             displayInfoLog( "Swing mode changed to " + Swing + " for " + device.deviceNetworkId)
             
-            sendEvent(name: 'swing', value: Swing, displayed: false,isStateChange: true)
+            sendEvent(name: 'swing', value: Swing, isStateChange: true)
             if (device.currentState("switch").value == "off") { generateSwitchEvent("on") }
             sendEvent(name: 'thermostatFanMode', value: "on", displayed: false)
             generateSwingModeEvent(Swing)
