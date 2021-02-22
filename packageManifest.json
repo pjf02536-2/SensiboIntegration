@@ -1,0 +1,27 @@
+{
+  "packageName": "Sensibo Integration",
+  "author": "Paul Hutton",
+  "version": "1.0.0",
+  "minimumHEVersion": "2.2.5",
+  "dateReleased": "2021-02-22",
+  "apps": [
+    {
+      "id": "caa541e6-6711-4fb8-8af1-e8200aa007db",
+      "name": "SensiboPod",
+      "namespace": "velowulf",
+      "location": "https://raw.githubusercontent.com/VeloWulf/SensiboIntegration/1.0.0/smartapps/SensiboIntegration.groovy",
+      "required": true,
+      "oauth": false,
+      "primary": false
+    }
+  ],
+  "drivers": [
+    {
+      "id": "fd7ba326-859c-4fd7-9aed-a4d7b14abbdb",
+      "name": "SensiboPod",
+      "namespace": "velowulf",
+      "location": "https://raw.githubusercontent.com/VeloWulf/SensiboIntegration/1.0.0/devicetypes/SensiboPod.groovy",
+      "required": true
+    }
+  ]
+}
