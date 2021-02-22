@@ -25,7 +25,7 @@ preferences {
 }
 
 metadata {
-	definition (name: "SensiboPod", namespace: "joyfulhouse", author: "Bryan Li", oauth: false) {
+	definition (name: "SensiboPod", namespace: "velowulf", author: "Paul Hutton", oauth: false) {
             // capability "Actuator"
             capability "Battery"
             capability "Health Check"
