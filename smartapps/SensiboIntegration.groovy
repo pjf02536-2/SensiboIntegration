@@ -18,8 +18,8 @@
 
 definition(
     name: "Sensibo Integration",
-    namespace: "joyfulhouse",
-    author: "Bryan Li",
+    namespace: "velowulf",
+    author: "Paul Hutton",
     description: "Connect your Sensibo Pod to Hubitat.",
     category: "Green Living",
     iconUrl: "", // empty string - not implemented in Hubitat
