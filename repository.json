@@ -1,0 +1,16 @@
+{
+  "author": "Paul Hutton",
+  "gitHubUrl": "https://github.com/VeloWulf",
+  "packages": [
+    {
+      "id": "69ff7ea0-fefe-4163-ac59-3b3c5623136f",
+      "name": "Sensibo Integration",
+      "category": "Integrations",
+      "location": "https://raw.githubusercontent.com/VeloWulf/SensiboIntegration/master/packageManifest.json",
+      "description": "Integration with the Sensibo Sky AC aircon controllers (cloud integration)",
+      "tags": [
+        "Climate Control"
+      ]
+    }
+  ]
+}
