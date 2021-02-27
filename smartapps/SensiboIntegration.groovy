@@ -41,7 +41,7 @@ preferences {
 
 // Initial variable declarations
 def getServerUrl() { return "https://home.sensibo.com" }
-def getChildNamespace() { return "joyfulhouse" }
+def getChildNamespace() { return "velowulf" }
 def getChildTypeName() { return "SensiboPod" }
 def getapikey() { return apiKey }
 def getPollRateMillis() { return 45 * 1000 }
