@@ -13,7 +13,8 @@
  *  for the specific language governing permissions and limitations under the License.
  *
  *  Date          Comments
- *  2019-04-27    Forked from Bryan Li's port from ST
+ *  2021-02-15    Forked from Bryan Li's port from ST
+ *  2021-02-28    Resolved old namespace issue (thanks benmek)
  */
 
 definition(
