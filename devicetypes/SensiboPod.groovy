@@ -14,7 +14,10 @@
  *
  *  Date          Comments
  *  2021-02-15	  Forked from Bryan Li's port from ST	    
- *
+ *   
+ *  2023-08-04    pjf02536-2
+ *                Updated Fan speed names from speedFan to FanSpeed, enabled Fan Auto,
+ *                renamed raiseTemperature and lowerTemperature to TemperatureUp and TemperatureDown
  */
 
 preferences {
@@ -59,8 +62,8 @@ metadata {
             //command "raiseHeatSetpoint"
             //command "lowerHeatSetpoint" 
             // command "voltage"
-            command "raiseTemperature"
-            command "lowerTemperature"
+            command "TemperatureUp"
+            command "TemperatureDown"
             command "switchSwing"
             command "modeSwing", [
                 [
@@ -86,11 +89,12 @@ metadata {
             command "modeDry"
             command "modeFan"
             command "modeAuto"
-            command "lowFan"
-            command "mediumFan"
-            command "highFan"
-            command "quietFan"
-            command "strongFan"
+            command "FanLow"
+            command "FanMedium"
+            command "FanHigh"
+            command "FanAuto"
+            command "FanQuiet"
+            command "FanStrong"
 //            command "fullswing"
             // command "setAirConditionerMode"
             command "toggleClimateReact"
@@ -525,8 +529,8 @@ def parseEventData(Map results) {
     }
 }
 
-void raiseTemperature() {
-    displayTraceLog( "raiseTemperature() called"	)
+void TemperatureUp() {
+    displayTraceLog( "TemperatureUp() called"	)
 
     def operMode = device.currentState("currentmode").value
     
@@ -709,8 +713,8 @@ def setDrySetpoint(temp) {
     }   
 }
 
-void lowerTemperature() {
-    displayTraceLog( "lowerTemperature() called")
+void TemperatureDown() {
+    displayTraceLog( "TemperatureDown() called")
     
     def operMode = device.currentState("currentmode").value
     
@@ -815,32 +819,33 @@ def dfanLevel(String newLevel){
     }    
 }
 
-def lowFan() {
+def FanLow() {
     displayTraceLog( "lowfan() called")
     dfanLevel("low")
 }
 
-def mediumFan() {
+def FanMedium() {
     displayTraceLog( "mediumfan() called")
     dfanLevel("medium")
 }
 
-def highFan() {
+def FanHigh() {
     displayTraceLog( "highfan() called")
     dfanLevel("high")
 }
 
-def quietFan() {
+
+def FanQuiet() {
     displayTraceLog( "quietfan() called")
     dfanLevel("quiet")
 }
 
-def strongFan() {
+def FanStrong() {
     displayTraceLog( "strongfan() called")
     dfanLevel("strong")
 }
 
-def autoFan() {
+def FanAuto() {
     displayTraceLog( "autofan() called")
     dfanLevel("auto")
 }
