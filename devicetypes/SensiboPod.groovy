@@ -2,6 +2,7 @@
  *  Sensibo Device Type Handler
  *
  *  Copyright 2021 Paul Hutton
+ *            2022-2023 Pete Flaherty
  *
  *  Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
  *  in compliance with the License. You may obtain a copy of the License at:
@@ -14,9 +15,10 @@
  *
  *  Date          Comments
  *  2021-02-15	  Forked from Bryan Li's port from ST	    
- *   
- *  2023-08-04    pjf02536-2
- *                Updated Fan speed names from speedFan to FanSpeed, enabled Fan Auto,
+ *
+ *  2022-01-14    pjf02536-2
+ *                Forked from Paul Huttons port 
+ *  2023-08-04    Updated Fan speed names from speedFan to FanSpeed, enabled Fan Auto,
  *                renamed raiseTemperature and lowerTemperature to TemperatureUp and TemperatureDown
  */
 
@@ -820,33 +822,33 @@ def dfanLevel(String newLevel){
 }
 
 def FanLow() {
-    displayTraceLog( "lowfan() called")
+    displayTraceLog( "fanlow() called")
     dfanLevel("low")
 }
 
 def FanMedium() {
-    displayTraceLog( "mediumfan() called")
+    displayTraceLog( "fanmedium() called")
     dfanLevel("medium")
 }
 
 def FanHigh() {
-    displayTraceLog( "highfan() called")
+    displayTraceLog( "fanhigh() called")
     dfanLevel("high")
 }
 
 
 def FanQuiet() {
-    displayTraceLog( "quietfan() called")
+    displayTraceLog( "fanquiet() called")
     dfanLevel("quiet")
 }
 
 def FanStrong() {
-    displayTraceLog( "strongfan() called")
+    displayTraceLog( "fanstrong() called")
     dfanLevel("strong")
 }
 
 def FanAuto() {
-    displayTraceLog( "autofan() called")
+    displayTraceLog( "fanauto() called")
     dfanLevel("auto")
 }
 
